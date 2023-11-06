@@ -24,7 +24,7 @@ setup(name='zCluster',
       long_description="""A code for measuring galaxy cluster photometric redshifts. Runs on both large scale
       public survey data (e.g., SDSS) and user-supplied photometric catalogs.""",
       packages=['zCluster'],
-      package_data={'zCluster': ['data/*', 'SED/CWW/*', 'SED/BR07/*', 'SED/EAZY_v1.0/*', 
+      package_data={'zCluster': ['data/*', 'SED/CWW/*', 'SED/BR07/*', 'SED/EAZY_v1.0/*', 'SED/swire_library/*','SED/COSMOS_FINAL/*'
                                  'passbands/*']},
       scripts=['bin/zCluster', 'bin/zField', 'bin/zClusterBCG', 'bin/zClusterComparisonPlot'],
       #ext_modules=[Extension("zClusterCython", ["zCluster/zClusterCython.pyx"], include_dirs=[numpy.get_include()])],
