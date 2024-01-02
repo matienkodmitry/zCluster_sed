@@ -22,7 +22,7 @@ import requests
 from astropy.io.votable import parse_single_table 
 
 #-------------------------------------------------------------------------------------------------------------
-CACHE_DIR='/home/data/lss/Catalogs_decalsdr9_tractor/'
+CACHE_DIR='/home/data/lss/Catalogs_decalsdr9_tractor'
 
 #-------------------------------------------------------------------------------------------------------------
 def makeCacheDir():
