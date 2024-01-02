@@ -22,7 +22,7 @@ import requests
 from astropy.io.votable import parse_single_table 
 
 #-------------------------------------------------------------------------------------------------------------
-CACHE_DIR=os.environ['HOME']+os.path.sep+".zCluster"+os.path.sep+"cache"
+CACHE_DIR='/home/data/lss/Catalogs_decalsdr9_tractor/'
 
 #-------------------------------------------------------------------------------------------------------------
 def makeCacheDir():
@@ -129,7 +129,7 @@ def getRetriever(database, maxMagError = 0.2):
         # For DECaLS, need the bricks files that define survey on the sky
         # These were previously included in zCluster, but now we fetch over web and cache
         bricksCacheDir=CACHE_DIR
-        makeCacheDir()
+        #makeCacheDir()
         bricksPath=bricksCacheDir+os.path.sep+"survey-bricks.fits.gz"
         if os.path.exists(bricksPath) == False:
             print("... fetching and caching DECaLS survey-bricks.fits.gz ...")
@@ -1072,7 +1072,7 @@ def DECaLSRetriever(RADeg, decDeg, halfBoxSizeDeg = 36.0/60.0, DR = None, option
 
     """
 
-    makeCacheDir()
+    #makeCacheDir()
     
     if 'altCacheDir' in list(optionsDict.keys()):
         cacheDir=optionsDict['altCacheDir']
