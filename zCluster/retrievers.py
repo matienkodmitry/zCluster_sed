@@ -130,11 +130,13 @@ def getRetriever(database, maxMagError = 0.2):
         # These were previously included in zCluster, but now we fetch over web and cache
         bricksCacheDir=CACHE_DIR
         #makeCacheDir()
-        bricksPath=bricksCacheDir+os.path.sep+"survey-bricks.fits.gz"
+        #bricksCacheDir+os.path.sep+
+        bricksPath="survey-bricks.fits.gz"
         if os.path.exists(bricksPath) == True:
             print("... fetching and caching DECaLS survey-bricks.fits.gz ...")
             urllib.request.urlretrieve("https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/%s/survey-bricks.fits.gz" % (DR.lower()), bricksPath)
-        bricksDRPath=bricksCacheDir+os.path.sep+"survey-bricks-%s-south.fits.gz" % (DR.lower())
+        #bricksCacheDir+os.path.sep+
+        bricksDRPath="survey-bricks-%s-south.fits.gz" % (DR.lower())
         if os.path.exists(bricksDRPath) == True:
             print("... fetching and caching DECaLS survey-bricks-%s-south.fits.gz ..." % (DR.lower()))
             urllib.request.urlretrieve("https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/%s/south/survey-bricks-%s-south.fits.gz" % (DR.lower(), DR.lower()), bricksDRPath)
