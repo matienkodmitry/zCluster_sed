@@ -110,8 +110,8 @@ class PhotoRedshiftEngine:
             pickleFileName=None
             #SEDDir=resource_filename('zCluster', 'SED/')
             SEDDir=zCluster.__path__[0]+os.path.sep+'SED'
-            self.SEDFiles=glob.glob(SEDDir+os.path.sep+"CWW"+os.path.sep+"*.sed")+ \
-            glob.glob(SEDDir+os.path.sep+"EAZY_v1.0"+os.path.sep+"*.dat")
+            self.SEDFiles=glob.glob(SEDDir+os.path.sep+"MARA23032010"+os.path.sep+"*.sed")
+            #glob.glob(SEDDir+os.path.sep+"EAZY_v1.0"+os.path.sep+"*.dat")
             #glob.glob(SEDDir+os.path.sep+"CWW"+os.path.sep+"*.sed")
                         #glob.glob(SEDDir+os.path.sep+"EAZY_v1.0"+os.path.sep+"*.dat")
                           #glob.glob(SEDDir+os.path.sep+"CWW"+os.path.sep+"*.sed")
