@@ -118,6 +118,7 @@ def getRetriever(database, maxMagError = 0.2):
             DR="DR8"
             retriever=DECaLSDR8Retriever
         elif database == 'DECaLSDR9':
+            
             DR="DR9"
             retriever=DECaLSDR9Retriever
         elif database == "DECaLSDR10":
