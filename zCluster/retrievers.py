@@ -141,7 +141,7 @@ def getRetriever(database, maxMagError = 0.2):
         bricksDRPath="survey-bricks-%s-south.fits.gz" % (DR.lower())
         if os.path.exists(bricksDRPath) == True:
             print("... fetching and caching DECaLS survey-bricks-%s-south.fits.gz ..." % (DR.lower()))
-            urllib.request.urlretrieve("https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/%s/south/survey-bricks-%s/south.fits.gz" % (DR.lower(), DR.lower()), bricksDRPath)
+            urllib.request.urlretrieve("https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/%s/south/survey-bricks-%s-south.fits.gz" % (DR.lower(), DR.lower()), bricksDRPath)
         bricksTab=atpy.Table().read(bricksPath)
         DRTab=atpy.Table().read(bricksDRPath)
         DRTab.rename_column("brickname", "BRICKNAME")
