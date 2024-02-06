@@ -22,7 +22,8 @@ import requests
 from astropy.io.votable import parse_single_table 
 
 #-------------------------------------------------------------------------------------------------------------
-CACHE_DIR='/home/data/lss/Catalogs_decalsdr9_tractor'
+CACHE_DIR='/home/data/lss/decals_dr9_south_tractor' #'/home/data/lss/Catalogs_decalsdr9_tractor'
+
 
 #-------------------------------------------------------------------------------------------------------------
 def makeCacheDir():
@@ -137,10 +138,10 @@ def getRetriever(database, maxMagError = 0.2):
             print("... fetching and caching DECaLS survey-bricks.fits.gz ...")
             urllib.request.urlretrieve("https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/%s/survey-bricks.fits.gz" % (DR.lower()), bricksPath)
         #bricksCacheDir+os.path.sep+
-        bricksDRPath="survey-bricks-%s-north.fits.gz" % (DR.lower())
+        bricksDRPath="survey-bricks-%s-south.fits.gz" % (DR.lower())
         if os.path.exists(bricksDRPath) == True:
             print("... fetching and caching DECaLS survey-bricks-%s-south.fits.gz ..." % (DR.lower()))
-            urllib.request.urlretrieve("https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/%s/north/survey-bricks-%s-north.fits.gz" % (DR.lower(), DR.lower()), bricksDRPath)
+            urllib.request.urlretrieve("https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/%s/south/survey-bricks-%s/south.fits.gz" % (DR.lower(), DR.lower()), bricksDRPath)
         bricksTab=atpy.Table().read(bricksPath)
         DRTab=atpy.Table().read(bricksDRPath)
         DRTab.rename_column("brickname", "BRICKNAME")
@@ -1087,7 +1088,7 @@ def DECaLSRetriever(RADeg, decDeg, halfBoxSizeDeg = 36.0/60.0, DR = None, option
 
     # Organised such that after this, have subdir with degrees RA (e.g. 000/ is 0 < RADeg < 1 degree)
     #basePath="https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/tractor/"
-    basePath="https://portal.nersc.gov/project/cosmo/data/legacysurvey/%s/north/tractor/" % (DR.lower())
+    basePath="https://portal.nersc.gov/project/cosmo/data/legacysurvey/%s/south/tractor/" % (DR.lower())
 
     outFileName=cacheDir+os.path.sep+"DECaLS%s_%.4f_%.4f_%.2f.fits" % (DR, RADeg, decDeg,
                                                                             halfBoxSizeDeg)
